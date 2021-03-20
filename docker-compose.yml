@@ -1,0 +1,23 @@
+version: '3.1'
+services:
+
+  web:
+    build: .
+    restart: always
+    volumes:
+    - .:/app/
+    - /etc/timezone:/etc/timezone
+    ports:
+      - 8080:80
+    links:
+      - db
+    depends_on:
+      - db
+
+  db:
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+
