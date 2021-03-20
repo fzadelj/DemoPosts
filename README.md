@@ -1,12 +1,14 @@
 # Installation
 ```
-git clone
+git clone https://github.com/fzadelj/DemoPosts
+cd DemoPosts
 docker-compose up --build -d
 bin/docker/composer update
+bin/docker/console doctrine:database:create
 bin/docker/console doctrine:migrations:migrate
 ```
 
-# Load posts into database
+# Load posts into the database
 ```
 bin/docker/console vendor:typicode:fetch
 ```

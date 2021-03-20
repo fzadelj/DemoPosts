@@ -17,13 +17,7 @@ class FetchVendorDataCommand extends Command
 {
     private UsersFetcherInterface $usersFetcher;
     private UsersRepository $usersRepository;
-    /**
-     * @var PostsRepository
-     */
     private PostsRepository $postsRepository;
-    /**
-     * @var PostsFetcherInterface
-     */
     private PostsFetcherInterface $postsFetcher;
 
     public function __construct(UsersFetcherInterface$usersFetcher, UsersRepository $usersRepository, PostsFetcherInterface $postsFetcher, PostsRepository $postsRepository)

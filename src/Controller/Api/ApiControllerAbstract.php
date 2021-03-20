@@ -48,7 +48,9 @@ abstract class ApiControllerAbstract extends AbstractController
                 $response[] = $callbackForEachRow($row);
             }
 
-            return $this->toResponse($response);
+            return $this->toResponse([
+                'data' => $response
+            ]);
         } catch (Throwable $e) {
             return $this->toResponse(
                 [
