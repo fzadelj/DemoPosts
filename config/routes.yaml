@@ -1,3 +1,15 @@
 #index:
 #    path: /
 #    controller: App\Controller\DefaultController::index
+
+posts:
+  path: /api/posts
+  controller: App\Controller\Api\PostsController::execute
+
+users:
+  path: /api/users
+  controller: App\Controller\Api\UsersController::execute
+
+posts_for_user:
+  path: /api/users/{userId}/posts
+  controller: App\Controller\Api\PostsController::getForUser

@@ -5,21 +5,9 @@ declare(strict_types=1);
 namespace App\Repository;
 
 
-use Doctrine\DBAL\Connection;
-use Doctrine\Persistence\ManagerRegistry;
+use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 
-class RepositoryAbstract
+abstract class RepositoryAbstract extends ServiceEntityRepository
 {
-    private Connection $connection;
-
-    public function __construct(ManagerRegistry $connection)
-    {
-        $this->connection = $connection->getConnection();
-    }
-
-    protected function getConnection(): Connection
-    {
-        return $this->connection;
-    }
 
 }
